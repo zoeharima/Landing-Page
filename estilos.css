@@ -512,12 +512,48 @@ span {
     flex-direction: column;
     align-items: center;
 }
-
+.btn-hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
 /* ==========================
    MOBILE
 ========================== */
 
 @media (max-width: 759px) {
+  .barra-superior {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap; 
+        align-items: center;
+    }
+    
+    .btn-hamburguesa {
+        display: block; 
+    }
+    
+    .menu-pill {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 15px;
+        padding: 15px;
+        margin-top: 15px;
+        gap: 15px;
+    }
+    
+  
+    .menu-pill.activo {
+        display: flex;
+    }
+    
+    .separador {
+        display: none; 
+    }
 
     .galeria-animeri {
 
@@ -570,6 +606,9 @@ span {
 }
 
 @media (min-width: 760px) {
+    .btn-hamburguesa {
+        display: none;
+    }
     .barra-superior {
         flex-direction: row;
         justify-content: space-between;

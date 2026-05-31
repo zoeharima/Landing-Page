@@ -16,9 +16,14 @@
                 <h2>ANIMERI</h2>
                 <p>by Yapura Meri</p>
             </div>
-            <div class="menu-pill">
-                <a href="#Intro">Sobre el evento</a> |
-                <a href="#invitados">Artistas invitados</a> |
+            <button class="btn-hamburguesa" id="btn-hamburguesa">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="menu-pill" id="menu-pill">
+                <a href="#Intro">Sobre el evento</a> 
+                <span class="separador">|</span>
+                <a href="#invitados">Artistas invitados</a> 
+                <span class="separador">|</span>
                 <a href="#formulario">Participar</a>
             </div>
         </nav>
@@ -264,5 +269,28 @@
                 behavior: "smooth"
             });
         });
+const btnHamburguesa = document.getElementById("btn-hamburguesa");
+        const menuPill = document.getElementById("menu-pill");
+        const iconoHamburguesa = btnHamburguesa.querySelector("i");
+        const enlacesMenu = menuPill.querySelectorAll("a");
 
+        btnHamburguesa.addEventListener("click", function () {
+            menuPill.classList.toggle("activo");
+
+            if (menuPill.classList.contains("activo")) {
+                iconoHamburguesa.classList.remove("fa-bars");
+                iconoHamburguesa.classList.add("fa-xmark");
+            } else {
+                iconoHamburguesa.classList.remove("fa-xmark");
+                iconoHamburguesa.classList.add("fa-bars");
+            }
+        });
+
+        enlacesMenu.forEach(enlace => {
+            enlace.addEventListener("click", function() {
+                menuPill.classList.remove("activo");
+                iconoHamburguesa.classList.remove("fa-xmark");
+                iconoHamburguesa.classList.add("fa-bars");
+            });
+        });
     </script>
